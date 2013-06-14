@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
@@ -70,7 +71,24 @@ namespace FluentDemo
         [TestMethod]
         public void Date()
         {
-            Assert.AreEqual(5, new DateTime(2012, 5, 12).Month);
+            Assert.AreEqual(6, new DateTime(2012, 5, 12).Month);
+        }
+
+        private class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+        }
+
+        [TestMethod]
+        public void Date()
+        {
+            var list = new List<Person>
+            {
+                new Person{Name = "bob", Age = 10}
+            };
+
+            Assert.IsTrue(list.Any(it => it.Age == 20));
         }
     }
 }
