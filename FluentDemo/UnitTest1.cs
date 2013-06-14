@@ -35,5 +35,18 @@ namespace FluentDemo
             var list = new List<string>{ "dog", "cat", "fish", "horse" };
             Assert.IsTrue(list.Contains("rabbit"));
         }
+
+        [TestMethod]
+        public void Null()
+        {
+            Assert.IsNotNull(null);
+            Assert.IsNull(new Object());
+        }
+
+        [TestMethod]
+        public void Type()
+        {
+            Assert.IsInstanceOfType(new Object(), typeof(string));
+        }
     }
 }
