@@ -41,12 +41,24 @@ namespace FluentDemo
         {
             Assert.IsNotNull(null);
             Assert.IsNull(new Object());
+            int? number = null;
+            Assert.IsNotNull(number);
         }
 
         [TestMethod]
         public void Type()
         {
             Assert.IsInstanceOfType(new Object(), typeof(string));
+        }
+
+        [TestMethod]
+        public void String()
+        {
+            var s = "";
+            Assert.IsFalse(s == string.Empty);
+
+            var sentence = "John kicked the ball";
+            Assert.IsTrue(sentence.Contains("ball");
         }
     }
 }
