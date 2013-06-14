@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace FluentDemo
 {
@@ -11,15 +12,28 @@ namespace FluentDemo
         [TestMethod]
         public void TrueFalse()
         {
-            Assert.IsTrue(true);
-            Assert.IsFalse(false);
+            Assert.IsTrue(false);
+            Assert.IsFalse(true);
         }
 
         [TestMethod]
         public void Reasons()
         {
-            Assert.IsTrue(true, "That's just the way it is");
-            Assert.IsFalse(false, "That's just the way it is");
+            Assert.IsTrue(false, "That's just the way it is");
+            Assert.IsFalse(true, "That's just the way it is");
+        }
+
+        [TestMethod]
+        public void Equal()
+        {
+            Assert.AreEqual(6, 5);
+        }
+
+        [TestMethod]
+        public void Contains()
+        {
+            var list = new List<string>{ "dog", "cat", "fish", "horse" };
+            Assert.IsTrue(list.Contains("rabbit"));
         }
     }
 }
