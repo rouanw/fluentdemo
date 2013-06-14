@@ -60,5 +60,17 @@ namespace FluentDemo
             var sentence = "John kicked the ball";
             Assert.IsTrue(sentence.Contains("ball");
         }
+
+        [TestMethod]
+        public void Compare()
+        {
+            Assert.IsTrue(10 > 2);
+        }
+
+        [TestMethod]
+        public void Date()
+        {
+            Assert.AreEqual(5, new DateTime(2012, 5, 12).Month);
+        }
     }
 }
