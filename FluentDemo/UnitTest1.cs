@@ -33,7 +33,7 @@ namespace FluentDemo
         [TestMethod]
         public void Contains()
         {
-            var list = new List<string>{ "dog", "cat", "fish", "horse" };
+            var list = new List<string> { "dog", "cat", "fish", "horse" };
             Assert.IsTrue(list.Contains("rabbit"));
         }
 
@@ -81,7 +81,7 @@ namespace FluentDemo
         }
 
         [TestMethod]
-        public void Date()
+        public void Collection()
         {
             var list = new List<Person>
             {
@@ -90,5 +90,15 @@ namespace FluentDemo
 
             Assert.IsTrue(list.Any(it => it.Age == 20));
         }
+
+        [TestMethod]
+        public void Property()
+        {
+            var bob = new Person { Name = "bob", Age = 10 };
+            var fred = new Person { Name = "fred", Age = 11 };
+
+            Assert.AreEqual(bob.Age, fred.Age);
+        }
+
     }
 }
